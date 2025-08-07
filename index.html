@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="flex justify-center items-center min-h-screen">
+        <div class="bg-gray-100 w-full max-w-3xl rounded-xl shadow-lg p-8">
+            <h1 class="font-bold text-4xl py-[1px] w-fit mx-auto text-gray-800 mb-8">Todo List</h1>
+            <form id="formTask" class="flex flex-wrap items-center justify-center gap-4 mb-6">
+                <div class="relative min-w-[200px] flex-1">
+                    <input type="text" id="taskContent"
+                        class="peer h-10 text-sm bg-gray-100 outline-none border border-gray-300 rounded px-3 py-1 w-full"
+                        placeholder=" " required />
+                    <label for="taskContent" class="absolute left-3 top-2 text-sm text-gray-500 transition-all duration-300 
+                            peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm
+                            peer-focus:top-[-0.5rem] peer-focus:text-xs peer-focus:text-blue-600 peer-[&:not(:placeholder-shown)]:top-[-0.5rem] 
+                            peer-[&:not(:placeholder-shown)]:text-xs 
+                            bg-gray-100 px-1">
+                        Task Name
+                    </label>
+                </div>
+                <div class="relative min-w-[160px] flex-1">
+                    <input type="date" id="taskDate"
+                        class="peer h-10 text-sm bg-gray-100 text-gray-500 outline-none border border-gray-300 rounded px-3 py-1 w-full"
+                        placeholder="" required />
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button type="submit"
+                        class="px-3 py-1 rounded text-2xl bg-green-400 hover:bg-green-200 cursor-pointer transition-colors duration-300 ease-in-out">+</button>
+                </div>
+            </form>
+            <div class="flex justify-between mb-4">
+                <div class="flex gap-2">
+                    <select id="filterOptions" class="border py-1 px-2 rounded">
+                        <option value="showAll">Show All</option>
+                        <option value="unfinishedOnly">Show Unfinished Only</option>
+                    </select>
+                    <button id="filter" class="btn-primary">FILTER</button>
+                </div>
+                <button id="deleteAll" class="btn-danger">DELETE ALL</button>
+            </div>
+            <table class="table-auto w-full mt-5 border border-black border-collapse">
+                <thead>
+                    <tr>
+                        <th class="table-cell">NO</th>
+                        <th class="table-cell">TASK</th>
+                        <th class="table-cell">DUE DATE</th>
+                        <th class="table-cell">STATUS</th>
+                        <th class="table-cell">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="editableData" class="text-center">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
