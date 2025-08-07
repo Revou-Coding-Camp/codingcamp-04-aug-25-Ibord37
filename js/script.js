@@ -1,12 +1,12 @@
 let tableData = [];
 let originalData = [...tableData];
 
-const formTask = document.getElementById("formTask");
-const deleteAll = document.getElementById("deleteAll");
+const formTask = document.getElementById("form-task");
+const deleteAll = document.getElementById("delete-all");
 const filterButton = document.getElementById("filter");
 
 const RenderTable = () => {
-    let table = document.getElementById("editableData");
+    let table = document.getElementById("editable-data");
     table.innerHTML = ''; // reset first
 
     if (tableData.length === 0)
@@ -113,8 +113,8 @@ const LoadEvents = () => {
 formTask.addEventListener("submit", (e) => {
     e.preventDefault(); // prevent like auto refresh?
 
-    const taskContent = document.getElementById("taskContent").value.trim();
-    const taskDate = document.getElementById("taskDate").value;
+    const taskContent = document.getElementById("task-content").value.trim();
+    const taskDate = document.getElementById("task-date").value;
 
     const nextId = tableData.length > 0 ? tableData[tableData.length - 1].id + 1 : 1;
 
@@ -140,12 +140,12 @@ deleteAll.addEventListener("click", () => {
 });
 
 filterButton.addEventListener("click", () => {
-    const filterOptions = document.getElementById("filterOptions").value;
+    const filterOptions = document.getElementById("filter-options").value;
     switch (filterOptions) {
-        case "showAll":
+        case "show-all":
             tableData = [...originalData];
             break;
-        case "unfinishedOnly":
+        case "unfinished-only":
             tableData = originalData.filter(data => data.done === false);
             break;
         default: break;

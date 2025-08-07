@@ -14,12 +14,12 @@
     <div class="flex justify-center items-center min-h-screen">
         <div class="bg-gray-100 w-full max-w-3xl rounded-xl shadow-lg p-8">
             <h1 class="font-bold text-4xl py-[1px] w-fit mx-auto text-gray-800 mb-8">Todo List</h1>
-            <form id="formTask" class="flex flex-wrap items-center justify-center gap-4 mb-6">
+            <form id="form-task" class="flex flex-wrap items-center justify-center gap-4 mb-6">
                 <div class="relative min-w-[200px] flex-1">
-                    <input type="text" id="taskContent"
+                    <input type="text" id="task-content"
                         class="peer h-10 text-sm bg-gray-100 outline-none border border-gray-300 rounded px-3 py-1 w-full"
                         placeholder=" " required />
-                    <label for="taskContent" class="absolute left-3 top-2 text-sm text-gray-500 transition-all duration-300 
+                    <label for="task-content" class="absolute left-3 top-2 text-sm text-gray-500 transition-all duration-300 
                             peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm
                             peer-focus:top-[-0.5rem] peer-focus:text-xs peer-focus:text-blue-600 peer-[&:not(:placeholder-shown)]:top-[-0.5rem] 
                             peer-[&:not(:placeholder-shown)]:text-xs 
@@ -28,7 +28,7 @@
                     </label>
                 </div>
                 <div class="relative min-w-[160px] flex-1">
-                    <input type="date" id="taskDate"
+                    <input type="date" id="task-date"
                         class="peer h-10 text-sm bg-gray-100 text-gray-500 outline-none border border-gray-300 rounded px-3 py-1 w-full"
                         placeholder="" required />
                 </div>
@@ -39,13 +39,13 @@
             </form>
             <div class="flex justify-between mb-4">
                 <div class="flex gap-2">
-                    <select id="filterOptions" class="border py-1 px-2 rounded">
-                        <option value="showAll">Show All</option>
-                        <option value="unfinishedOnly">Show Unfinished Only</option>
+                    <select id="filter-options" class="border py-1 px-2 rounded">
+                        <option value="show-all">Show All</option>
+                        <option value="unfinished-only">Show Unfinished Only</option>
                     </select>
                     <button id="filter" class="btn-primary">FILTER</button>
                 </div>
-                <button id="deleteAll" class="btn-danger">DELETE ALL</button>
+                <button id="delete-all" class="btn-danger">DELETE ALL</button>
             </div>
             <table class="table-auto w-full mt-5 border border-black border-collapse">
                 <thead>
@@ -57,7 +57,7 @@
                         <th class="table-cell">ACTIONS</th>
                     </tr>
                 </thead>
-                <tbody id="editableData" class="text-center">
+                <tbody id="editable-data" class="text-center">
 
                 </tbody>
             </table>
